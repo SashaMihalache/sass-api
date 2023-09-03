@@ -27,7 +27,7 @@ export function Header() {
             href="/#dashboard"
             className="font-medium text-sm text-white bg-black px-4 py-2 rounded-lg hover:opacity-90"
           >
-            Pricing
+            Dashboard
           </Link>
         </div>
       </div>

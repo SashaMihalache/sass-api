@@ -1,6 +1,5 @@
 import { Header } from '@/components/Header';
 import { isLoggedIn } from '@/lib/auth';
-import { createCustomerIfNull } from '@/lib/stripe';
 
 export default async function DashboardLayout({
   children,
@@ -8,7 +7,6 @@ export default async function DashboardLayout({
   children: React.ReactNode;
 }) {
   await isLoggedIn();
-  await createCustomerIfNull();
 
   return (
     <div className="">

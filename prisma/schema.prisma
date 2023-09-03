@@ -22,8 +22,20 @@ model User {
   accounts              Account[]
   sessions              Session[]
   stripe_customer_id    String?    @map("stripe_customer_id")
+  stripe_subscription_item String?
+  api_key               String?    @map("api_key")
   @@map("users")
 }
+
+model Log {
+  id  String @id @default(cuid())
+  userId String
+  method String
+  status Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model Account {
   id                 String    @id @default(cuid())
   userId              String    @map("user_id")
